@@ -40,10 +40,12 @@ function updateCircle() {
   }
   requestAnimationFrame(updateCircle);
 }
-document.addEventListener("mousemove", onmousemove);
+if (cursor) {
+  document.addEventListener("mousemove", onmousemove);
 
-createCircle();
-updateCircle();
+  createCircle();
+  updateCircle();
+}
 
 // slider
 const sliderDiv = document.querySelector(".sliderDiv");
@@ -145,6 +147,61 @@ window.addEventListener("unload", () => clearInterval(intervalId));
 
 // hide menu
 const menu = document.querySelector(".menu");
-const footer = document.querySelector("footer");
 
-console.log(footer);
+const footer = document.querySelector("footer");
+window.addEventListener("scroll", function (e) {
+  const windowY = window.scrollY;
+  const position = footer.offsetTop - window.innerHeight;
+
+  if (windowY >= position) {
+    menu.style.display = "none";
+  } else {
+    // console.log("show");
+    menu.style.display = "grid";
+  }
+});
+
+document.querySelector(".gotop").addEventListener("click", function () {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+const btn = document.querySelectorAll(".btn");
+const mobile = document.querySelector(".mobile");
+
+btn[0].addEventListener("click", function (e) {
+  btn[0].classList.toggle("btnClose");
+  btn[1].classList.toggle("btnClose");
+  
+  btn[0].addEventListener("transitionend", function () {
+    if (mobile.classList.contains("mobileActive")) {
+      mobile.classList.remove("mobileActive");
+    } else {
+      mobile.classList.add("mobileActive");
+    }
+  }, { once: true });
+});
+
+btn[1].addEventListener("click", function (e) {
+  btn[1].classList.toggle("btnClose");
+  btn[0].classList.toggle("btnClose");
+
+  // if (mobile.classList.contains("mobileActive")) {
+  //   mobile.classList.remove("mobileActive");
+  // } else {
+  //   mobile.classList.add("mobileActive");
+  // }
+
+
+  btn[1].addEventListener("transitionend", function () {
+    if (mobile.classList.contains("mobileActive")) {
+      mobile.classList.remove("mobileActive");
+    } else {
+      mobile.classList.add("mobileActive");
+    }
+  }, { once: true });
+});
+
+const li = document.querySelectorAll("li .li");
+li.forEach((el, i) => {
+  el.style.animationDelay = `${0.2 * i}s`;
+});

@@ -140,6 +140,7 @@ nav {
   margin: 2vw;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
 .logo {
   grid-column: 1;
   overflow: hidden;
@@ -173,30 +174,257 @@ nav {
     }
   }
 }
-.card {
-  grid-column: 2;
-}
+
 .menu {
   grid-column: 1;
   bottom: 2vw;
   left: 2vw;
-
+  z-index: 100;
   position: fixed;
   display: grid;
   gap: 0.5vw;
   li {
     overflow: hidden;
-    height: 1.2vw;
-
+    height: 1.5vw;
     a {
       color: #000;
-      font-size: .8vw;
+      font-size: 1vw;
       font-weight: 600;
+    }
+  }
+}
+.mobile {
+  display: none;
+}
+@media (max-width: 700px) {
+  nav,
+  .menu {
+    display: none !important;
+  }
+  .cursor {
+    display: none;
+  }
+  .none {
+    display: none !important;
+  }
+
+  .mobile {
+    .mobileNavBlack {
+      display: none !important;
+    }
+    top: 0;
+    padding: 3vw;
+    display: block;
+    background: #141414;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    color: #fff;
+    height: 100vh;
+    transition: all 0.5s ease-in-out;
+    transition: height 1.2s;
+    .hover {
+      height: 6vw;
+      overflow: hidden;
+      .hoverChild {
+        height: 7vw;
+      }
+      img {
+        width: 14vw;
+      }
+    }
+    .mobileNav {
+      display: flex;
+      justify-content: space-between;
+      .cart {
+        font-size: 3vw;
+      }
+    }
+    .mobileMenu {
+      margin-top: 10vw;
+      a {
+        color: #fff;
+      }
+      .tab {
+        font-size: 0.8rem;
+        margin-bottom: 0.3rem;
+        height: 1rem;
+        overflow: hidden;
+      }
+      .hr {
+        width: 100%;
+        height: 1px;
+        background: #fff;
+        animation: hr-anime 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        @keyframes hr-anime {
+          0% {
+            width: 0%;
+          }
+          100% {
+            width: 100%;
+          }
+        }
+      }
+      ul {
+        margin-top: 5vw;
+        display: grid;
+        font-size: 2rem;
+        font-weight: 700;
+        li {
+          height: 3rem;
+          overflow: hidden;
+        }
+      }
+      .li {
+        animation: navAnimation 1s ease-out forwards;
+        animation-delay: 1s;
+        transform: translateY(100%);
+        opacity: 0;
+        @keyframes navAnimation {
+          0% {
+            opacity: 0;
+            transform: translateY(200%);
+          }
+          100% {
+            opacity: 1;
+
+            transform: translateY(0);
+          }
+        }
+      }
+      .footer {
+        margin-top: 5vw;
+        display: flex;
+        gap: 20%;
+        font-size: 1.1rem;
+        .footerLi {
+          height: 1.4rem;
+          overflow: hidden;
+        }
+      }
+      .bottom {
+        margin-top: 10vw;
+        display: flex;
+        gap: 20%;
+        .ink {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-weight: 800;
+          height: 3.3rem;
+          overflow: hidden;
+          img {
+            width: 2rem;
+          }
+        }
+        .social {
+          display: flex;
+          align-items: end;
+          gap: 1rem;
+          .socialIcon {
+            height: 1.2rem;
+            overflow: hidden;
+            cursor: pointer;
+            img {
+              width: 1.2rem;
+              height: 1.2rem;
+            }
+          }
+        }
+      }
+      .mobileHr {
+        margin-top: 6vw;
+      }
+    }
+
+    .btn {
+      width: 30px;
+      height: 25px;
+      position: relative;
+      cursor: pointer;
+      div {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        background: #fff;
+        position: absolute;
+        height: 2px;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .bar1 {
+        width: 50%;
+        transform: translate(-100%, 10px);
+      }
+      .bar2 {
+        width: 100%;
+      }
+      .bar3 {
+        width: 50%;
+        transform: translate(-0%, -10px);
+      }
+    }
+
+    .btnClose {
+      transition: all 1s;
+      .bar1 {
+        // width: 50%;
+        transform-origin: 100% 50%;
+        transform: translate(-100%, 0) rotate(-45deg);
+      }
+      .bar2 {
+        transform: translate(-50%) rotate(45deg);
+      }
+      .bar3 {
+        transform: translate(0, 0) rotate(-45deg);
+        transform-origin: 0 0;
+      }
+    }
+  }
+
+  .mobileActive {
+    top: 0;
+    position: fixed;
+    background: none;
+    animation: anime 0.5s ease-in;
+    height: 0vh;
+    @keyframes anime {
+      0% {
+        height: 0vh;
+        background: none;
+      }
+      100% {
+        height: 100vh;
+        background: #141414;
+      }
+    }
+    @keyframes anime {
+      0% {
+        height: 100vh;
+        background: #141414;
+      }
+      100% {
+        height: 0vh;
+        background: #141414;
+      }
+    }
+    .mobileNavBlack {
+      display: flex !important;
+      .cart {
+        color: #000000;
+      }
+    }
+    .active {
+      display: none;
     }
   }
 }
 
 main {
+  margin-top: 6vw;
   display: grid;
   grid-template-columns: 10% 80% 10%;
   grid-auto-rows: max-content;
@@ -237,6 +465,11 @@ main {
   }
 }
 
+.card {
+  grid-column: 3;
+  justify-self: end;
+  position: fixed;
+}
 .container {
   grid-column: 2;
   grid-row: 2;
@@ -524,11 +757,11 @@ main {
 }
 
 footer {
-  margin-top: 6vw;
+  margin-top: 20vw;
+  margin-bottom: 3vw;
   grid-column: 2;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 3vw;
   .from {
     display: flex;
     flex-direction: column;
