@@ -189,232 +189,6 @@ nav {
   display: none;
 }
 
-@media (max-width: 700px) {
-  main {
-    margin-top: 140px !important;
-  }
-  nav,
-  .menu {
-    display: none !important;
-  }
-  .cart {
-    display: none !important;
-  }
-  .cursor {
-    display: none;
-  }
-  .none {
-    display: none !important;
-  }
-  .mobile {
-    top: 0;
-    padding: 3vw;
-    display: block;
-    background: #141414;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    width: 100%;
-    z-index: 100;
-    color: #fff;
-    height: 100vh;
-    transition: all 0.5s ease-in-out;
-    transition: height 1.2s;
-  }
-  .mobile .mobileNavBlack {
-    display: none !important;
-  }
-  .mobile .hover {
-    height: 6vw;
-    overflow: hidden;
-  }
-  .mobile .hover .hoverChild {
-    height: 7vw;
-  }
-  .mobile .hover img {
-    width: 14vw;
-  }
-  .mobile .mobileNav {
-    display: flex;
-    justify-content: space-between;
-  }
-  .mobile .mobileNav .cart {
-    font-size: 3vw;
-  }
-  .mobile .mobileMenu {
-    margin-top: 10vw;
-  }
-  .mobile .mobileMenu a {
-    color: #fff;
-  }
-  .mobile .mobileMenu .tab {
-    font-size: 0.8rem;
-    margin-bottom: 0.3rem;
-    height: 1rem;
-    overflow: hidden;
-  }
-  .mobile .mobileMenu .hr {
-    width: 100%;
-    height: 1px;
-    background: #fff;
-    animation: hr-anime 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  }
-  @keyframes hr-anime {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 100%;
-    }
-  }
-  .mobile .mobileMenu ul {
-    margin-top: 5vw;
-    display: grid;
-    font-size: 2rem;
-    font-weight: 700;
-  }
-  .mobile .mobileMenu ul li {
-    height: 3rem;
-    overflow: hidden;
-  }
-  .mobile .mobileMenu .li {
-    animation: navAnimation 1s ease-out forwards;
-    animation-delay: 1s;
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  @keyframes navAnimation {
-    0% {
-      opacity: 0;
-      transform: translateY(200%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  .mobile .mobileMenu .footer {
-    margin-top: 5vw;
-    display: flex;
-    gap: 20%;
-    font-size: 1.1rem;
-  }
-  .mobile .mobileMenu .footer .footerLi {
-    height: 1.4rem;
-    overflow: hidden;
-  }
-  .mobile .mobileMenu .bottom {
-    margin-top: 10vw;
-    display: flex;
-    gap: 20%;
-  }
-  .mobile .mobileMenu .bottom .ink {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-weight: 800;
-    height: 3.3rem;
-    overflow: hidden;
-  }
-  .mobile .mobileMenu .bottom .ink img {
-    width: 2rem;
-  }
-  .mobile .mobileMenu .bottom .social {
-    display: flex;
-    align-items: end;
-    gap: 1rem;
-  }
-  .mobile .mobileMenu .bottom .social .socialIcon {
-    height: 1.2rem;
-    overflow: hidden;
-    cursor: pointer;
-  }
-  .mobile .mobileMenu .bottom .social .socialIcon img {
-    width: 1.2rem;
-    height: 1.2rem;
-  }
-  .mobile .mobileMenu .mobileHr {
-    margin-top: 6vw;
-  }
-  .mobile .btn {
-    width: 30px;
-    height: 25px;
-    position: relative;
-    cursor: pointer;
-  }
-  .mobile .btn div {
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    background: #fff;
-    position: absolute;
-    height: 2px;
-    display: block;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .mobile .btn .bar1 {
-    width: 50%;
-    transform: translate(-100%, 10px);
-  }
-  .mobile .btn .bar2 {
-    width: 100%;
-  }
-  .mobile .btn .bar3 {
-    width: 50%;
-    transform: translate(0%, -10px);
-  }
-  .mobile .btnClose {
-    transition: all 1s;
-  }
-  .mobile .btnClose .bar1 {
-    transform-origin: 100% 50%;
-    transform: translate(-100%, 0) rotate(-45deg);
-  }
-  .mobile .btnClose .bar2 {
-    transform: translate(-50%) rotate(45deg);
-  }
-  .mobile .btnClose .bar3 {
-    transform: translate(0, 0) rotate(-45deg);
-    transform-origin: 0 0;
-  }
-  .mobileActive {
-    top: 0;
-    position: fixed;
-    background: none;
-    animation: anime 0.5s ease-in;
-    height: 0vh;
-  }
-  @keyframes anime {
-    0% {
-      height: 0vh;
-      background: none;
-    }
-    100% {
-      height: 100vh;
-      background: #141414;
-    }
-  }
-  @keyframes anime {
-    0% {
-      height: 100vh;
-      background: #141414;
-    }
-    100% {
-      height: 0vh;
-      background: #141414;
-    }
-  }
-  .mobileActive .mobileNavBlack {
-    display: flex !important;
-  }
-  .mobileActive .mobileNavBlack .cart {
-    color: #000000;
-  }
-  .mobileActive .active {
-    display: none;
-  }
-}
 main {
   margin-top: 6vw;
   display: grid;
@@ -456,7 +230,7 @@ main header .minText {
   letter-spacing: -0.07em;
 }
 
-.cart {
+.cart2 {
   grid-column: 3;
   justify-self: end;
   position: fixed;
@@ -778,6 +552,7 @@ footer .from .input button,
 footer .from .input input {
   border: none;
   outline: none;
+  background: none;
 }
 footer .from .emailIcon {
   font-size: 1vw;
@@ -835,4 +610,257 @@ footer .footerBtn .social {
 }
 footer .footerBtn .social .socialIcon img {
   width: 1.5vw;
+}
+
+.sliderDiv,
+.slider {
+  touch-action: pan-y; /* Allow vertical panning */
+}
+
+@media (max-width: 700px) {
+  main {
+    margin-top: 140px !important;
+    overflow: hidden;
+  }
+  nav,
+  .menu {
+    display: none !important;
+  }
+  .cart2 {
+    display: none !important;
+  }
+  .cursor {
+    display: none;
+  }
+  .none {
+    display: none !important;
+  }
+  .footerText {
+    justify-content: center;
+  }
+  .footerText img {
+    width: 15vw;
+  }
+  .footerText .animeText {
+    height: 20vw;
+    width: 60vw;
+  }
+  .footerText .animeText .name {
+    width: 25vw;
+    font-size: 4.6vw;
+  }
+  .footerText .animeText .text {
+    width: 35vw;
+    height: 20vw;
+    font-size: 2vw;
+    line-height: 2.2vw;
+  }
+  .mobile {
+    top: 0;
+    padding: 3vw;
+    display: block;
+    background: #141414;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    color: #fff;
+    height: 100vh;
+    transition: all 0.5s ease-in-out;
+    transition: height 1.2s;
+  }
+  .mobile .mobileNavBlack {
+    display: none !important;
+  }
+  .mobile .hover {
+    height: 6vw;
+    overflow: hidden;
+  }
+  .mobile .hover .hoverChild {
+    height: 7vw;
+  }
+  .mobile .hover img {
+    width: 14vw;
+  }
+  .mobile .mobileNav {
+    display: flex;
+    justify-content: space-between;
+  }
+  .mobile .mobileNav .cart {
+    font-size: 3vw;
+  }
+  .mobile .mobileMenu {
+    margin-top: 10vw;
+  }
+  .mobile .mobileMenu a {
+    color: #fff;
+  }
+  .mobile .mobileMenu .tab {
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+    height: 1rem;
+    overflow: hidden;
+  }
+  .mobile .mobileMenu .hr {
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    animation: hr-anime 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  }
+  @keyframes hr-anime {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  .mobile .mobileMenu ul {
+    margin-top: 5vw;
+    display: grid;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .mobile .mobileMenu ul li {
+    height: 3rem;
+    overflow: hidden;
+  }
+  .mobile .mobileMenu .li {
+    animation: navAnimation 1s ease-out forwards;
+    animation-delay: 1s;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  @keyframes navAnimation {
+    0% {
+      opacity: 0;
+      transform: translateY(200%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .mobile .mobileMenu .footer {
+    margin-top: 5vw;
+    display: flex;
+    gap: 20%;
+    font-size: 1.1rem;
+  }
+  .mobile .mobileMenu .footer .footerLi {
+    height: 1.4rem;
+    overflow: hidden;
+  }
+  .mobile .mobileMenu .bottom {
+    margin-top: 10vw;
+    display: flex;
+    gap: 20%;
+  }
+  .mobile .mobileMenu .bottom .ink {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    height: 3.3rem;
+    overflow: hidden;
+  }
+  .mobile .mobileMenu .bottom .ink img {
+    width: 2rem;
+  }
+  .mobile .mobileMenu .bottom .social {
+    display: flex;
+    align-items: end;
+    gap: 1rem;
+  }
+  .mobile .mobileMenu .bottom .social .socialIcon {
+    height: 1.2rem;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .mobile .mobileMenu .bottom .social .socialIcon img {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  .mobile .mobileMenu .mobileHr {
+    margin-top: 6vw;
+  }
+  .mobile .btn {
+    width: 30px;
+    height: 25px;
+    position: relative;
+    cursor: pointer;
+  }
+  .mobile .btn div {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: #fff;
+    position: absolute;
+    height: 2px;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .mobile .btn .bar1 {
+    width: 50%;
+    transform: translate(-100%, 10px);
+  }
+  .mobile .btn .bar2 {
+    width: 100%;
+  }
+  .mobile .btn .bar3 {
+    width: 50%;
+    transform: translate(0%, -10px);
+  }
+  .mobile .btnClose {
+    transition: all 1s;
+  }
+  .mobile .btnClose .bar1 {
+    transform-origin: 100% 50%;
+    transform: translate(-100%, 0) rotate(-45deg);
+  }
+  .mobile .btnClose .bar2 {
+    transform: translate(-50%) rotate(45deg);
+  }
+  .mobile .btnClose .bar3 {
+    transform: translate(0, 0) rotate(-45deg);
+    transform-origin: 0 0;
+  }
+  .mobileActive {
+    top: 0;
+    position: fixed;
+    background: none;
+    animation: anime 0.5s ease-in;
+    height: 0vh;
+  }
+  @keyframes anime {
+    0% {
+      height: 0vh;
+      background: none;
+    }
+    100% {
+      height: 100vh;
+      background: #141414;
+    }
+  }
+  @keyframes anime {
+    0% {
+      height: 100vh;
+      background: #141414;
+    }
+    100% {
+      height: 0vh;
+      background: #141414;
+    }
+  }
+  .mobileActive .mobileNavBlack {
+    display: flex !important;
+  }
+  .mobileActive .mobileNavBlack .cart {
+    color: #000000;
+  }
+  .mobileActive .active {
+    display: none;
+  }
 }

@@ -54,27 +54,26 @@ const slider = document.querySelector(".slider");
 let isDragging = false;
 let startX;
 let x;
-let prePercentage = 0;
-sliderDiv.addEventListener("mousedown", function (e) {
+
+function down(e) {
   isDragging = true;
   startX = e.pageX - slider.offsetLeft;
   sliderDiv.style.cursor = "grabbing";
-});
+}
 
-sliderDiv.addEventListener("mouseup", function (e) {
+function up() {
   isDragging = false;
   sliderDiv.style.cursor = "grab";
   updateSlider();
-});
-sliderDiv.addEventListener("mouseleave", function (e) {
+}
+
+function leave() {
   isDragging = false;
   sliderDiv.style.cursor = "grab";
   updateSlider();
-});
-
-sliderDiv.addEventListener("mousemove", function (e) {
+}
+function move(e) {
   if (!isDragging) return;
-  e.preventDefault();
   x = e.pageX;
   // slider.style.left = `${x - startX}px`;
   slider.animate(
@@ -86,6 +85,32 @@ sliderDiv.addEventListener("mousemove", function (e) {
       fill: "forwards",
     }
   );
+}
+
+sliderDiv.addEventListener("mousedown", function (e) {
+  down(e);
+});
+
+sliderDiv.addEventListener("mouseleave", function (e) {
+  leave();
+});
+
+sliderDiv.addEventListener("mouseup", function (e) {
+  up();
+});
+sliderDiv.addEventListener("mousemove", function (e) {
+  e.preventDefault();
+  move(e);
+});
+
+slider.addEventListener("touchstart", function (e) {
+  down(e.touches[0]);
+});
+slider.addEventListener("touchmove", function (e) {
+  move(e.touches[0]);
+});
+slider.addEventListener("touchend", function (e) {
+  up();
 });
 
 function updateSlider() {
@@ -115,19 +140,8 @@ function updateSlider() {
   }
 }
 
-// const hover = document.querySelectorAll(".hover");
-// hover.forEach((el) => {
-//   el.style.height = `${el.offsetHeight / 2}px`;
-// });
-
-// const logo = document.querySelectorAll(".logo");
-// logo.forEach((el) => {
-//   el.style.width = `${el.offsetWidth / 2}px`;
-// });
-
-const animeText = document.querySelector(".animeText");
-
 // Function to switch between animations
+const animeText = document.querySelector(".animeText");
 function switchAnimation() {
   if (animeText.style.animationName === "moveDown") {
     animeText.style.animationName = "moveUp";
@@ -161,24 +175,30 @@ window.addEventListener("scroll", function (e) {
   }
 });
 
+// go to top button
 document.querySelector(".gotop").addEventListener("click", function () {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+// mobile navbar
 const btn = document.querySelectorAll(".btn");
 const mobile = document.querySelector(".mobile");
 
 btn[0].addEventListener("click", function (e) {
   btn[0].classList.toggle("btnClose");
   btn[1].classList.toggle("btnClose");
-  
-  btn[0].addEventListener("transitionend", function () {
-    if (mobile.classList.contains("mobileActive")) {
-      mobile.classList.remove("mobileActive");
-    } else {
-      mobile.classList.add("mobileActive");
-    }
-  }, { once: true });
+
+  btn[0].addEventListener(
+    "transitionend",
+    function () {
+      if (mobile.classList.contains("mobileActive")) {
+        mobile.classList.remove("mobileActive");
+      } else {
+        mobile.classList.add("mobileActive");
+      }
+    },
+    { once: true }
+  );
 });
 
 btn[1].addEventListener("click", function (e) {
@@ -191,14 +211,17 @@ btn[1].addEventListener("click", function (e) {
   //   mobile.classList.add("mobileActive");
   // }
 
-
-  btn[1].addEventListener("transitionend", function () {
-    if (mobile.classList.contains("mobileActive")) {
-      mobile.classList.remove("mobileActive");
-    } else {
-      mobile.classList.add("mobileActive");
-    }
-  }, { once: true });
+  btn[1].addEventListener(
+    "transitionend",
+    function () {
+      if (mobile.classList.contains("mobileActive")) {
+        mobile.classList.remove("mobileActive");
+      } else {
+        mobile.classList.add("mobileActive");
+      }
+    },
+    { once: true }
+  );
 });
 
 const li = document.querySelectorAll("li .li");
