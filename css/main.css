@@ -190,8 +190,14 @@ nav {
 }
 
 @media (max-width: 700px) {
+  main {
+    margin-top: 140px !important;
+  }
   nav,
   .menu {
+    display: none !important;
+  }
+  .cart {
     display: none !important;
   }
   .cursor {
@@ -450,7 +456,7 @@ main header .minText {
   letter-spacing: -0.07em;
 }
 
-.card {
+.cart {
   grid-column: 3;
   justify-self: end;
   position: fixed;
