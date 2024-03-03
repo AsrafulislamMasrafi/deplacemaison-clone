@@ -112,7 +112,7 @@ slider.addEventListener("touchmove", function (e) {
 slider.addEventListener("touchend", function (e) {
   up();
 });
-
+updateSlider();
 function updateSlider() {
   const outer = sliderDiv.getBoundingClientRect();
   const inner = slider.getBoundingClientRect();

@@ -198,6 +198,7 @@ nav {
 }
 
 main {
+  overflow-x: hidden;
   margin-top: 6vw;
   display: grid;
   grid-template-columns: 10% 80% 10%;
@@ -807,8 +808,8 @@ footer {
     }
 
     .btn {
-      width: 30px;
-      height: 25px;
+      width: 8vw;
+      // height: 25px;
       position: relative;
       cursor: pointer;
       div {
@@ -886,5 +887,14 @@ footer {
     .active {
       display: none;
     }
+  }
+}
+
+footer {
+  .from {
+    display: none;
+  }
+  .footerLinks{
+    width: 50%;
   }
 }

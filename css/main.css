@@ -190,6 +190,7 @@ nav {
 }
 
 main {
+  overflow-x: hidden;
   margin-top: 6vw;
   display: grid;
   grid-template-columns: 10% 80% 10%;
@@ -787,8 +788,7 @@ footer .footerBtn .social .socialIcon img {
     margin-top: 6vw;
   }
   .mobile .btn {
-    width: 30px;
-    height: 25px;
+    width: 8vw;
     position: relative;
     cursor: pointer;
   }
@@ -863,4 +863,10 @@ footer .footerBtn .social .socialIcon img {
   .mobileActive .active {
     display: none;
   }
+}
+footer .from {
+  display: none;
+}
+footer .footerLinks {
+  width: 50%;
 }
